@@ -1,0 +1,28 @@
+name: wave69-cell-tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  node-invariants:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Invariant tests (die / sticky receipts / spec gate / unit table)
+        run: node --test tests/die_engine.test.mjs tests/sticky_receipts.test.mjs tests/spec_gate.test.mjs tests/unit_table.test.mjs
+
+  python-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Surface C tests (mmap projection, no-locks proof)
+        run: python3 -m unittest discover -s tests -p 'test_*.py'

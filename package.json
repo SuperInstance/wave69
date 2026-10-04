@@ -1,0 +1,16 @@
+{
+  "name": "wave69",
+  "version": "0.69.0",
+  "private": true,
+  "description": "Wave-69: Multi-Model Cellular Paradigm / Sticky Evolution — sticky receipts (scars survive rewind), deterministic stochasticity (die engine), multi-model cognitive heterogeneity, Bridge 3 unit-table GAN, Return Stick Surface C.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/die_engine.test.mjs tests/sticky_receipts.test.mjs tests/spec_gate.test.mjs tests/unit_table.test.mjs && python3 -m unittest discover -s tests -p 'test_*.py'",
+    "test:node": "node --test tests/die_engine.test.mjs tests/sticky_receipts.test.mjs tests/spec_gate.test.mjs tests/unit_table.test.mjs",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "trackA": "node track_a/run_track_a.mjs"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
